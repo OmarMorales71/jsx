@@ -1,9 +1,11 @@
 import React from 'react';
 import "./styles/styles.scss"
 import Curso from './Curso'
+import TopBar from './TopBar'
 //Solo se puede retornar un elemento
 const App = () => (
     <>
+    <TopBar />
         <div className="main-banner img-container l-section" id="main-banner">
   <div className="ed-grid lg-grid-6">
     <div className="lg-cols-4 lg-x-2">
