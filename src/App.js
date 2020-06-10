@@ -20,10 +20,28 @@ const App = () => (
 </div>
 
 <div className="ed-grid m-grid-4">
-<Curso />
-<Curso />
-<Curso />
-<Curso />
+<Curso 
+title="React desde cero" 
+img="https://www.futbolred.com/files/article_main/files/crop/uploads/2018/05/26/5b09d2c02885b.r_1590520116395.0-4-680-344.jpeg" 
+teacher="Omar Morales Ortega"
+price="99"
+/>
+<Curso 
+title="Java desde cero" 
+img="https://i.ytimg.com/an_webp/NE6pANWJGuU/mqdefault_6s_480x270.webp?du=3000&sqp=CIWrgPcF&rs=AOn4CLBmq_k354XK3f6Ek8msZi14Wq9snw" 
+teacher="Valeria Vargas"
+price="199"
+/><Curso 
+title="Kotlin desde cero" 
+img="https://i.ytimg.com/vi/5qap5aO4i9A/hq720_live.jpg?sqp=CMy0gPcF-oaymwEZCNAFEJQDSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLDkAiGWW28oqf34Y8Elq0dI20rWrA" 
+teacher="Deborah Nonnis"
+price="49"
+/><Curso 
+title="PHP desde cero" 
+img="https://i.ytimg.com/an_webp/n1bsYo2Ndow/mqdefault_6s.webp?du=3000&sqp=CNyvgPcF&rs=AOn4CLCFrGv55JZdNiYGysLg_FAMAWefrg" 
+teacher="Giorgia Cordiglia"
+price="99"
+/>
 </div>
     </>
 )

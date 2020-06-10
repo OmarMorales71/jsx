@@ -1,21 +1,21 @@
 import React from 'react'
-const curso = {
+/*const curso = {
   title: "React desde cero",
   img: "https://www.futbolred.com/files/article_main/files/crop/uploads/2018/05/26/5b09d2c02885b.r_1590520116395.0-4-680-344.jpeg",
   teacher: "George Eglinton",
   price:59
 
-}
+}*/
 
 
-const Curso = () => (
+const Curso = ({title, img, price, teacher}) => (
   <article className="card">
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-      <img src={curso.img} alt={curso.title} />
+      <img src={img} alt={title} />
     </div>
     <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
       <h3 className="t5 s-mb-2 s-center">
-        {curso.title}
+        {title}
       </h3>
       <div className="s-mb-2 s-main-center">
         <div className="card__teacher s-cross-center">
@@ -24,11 +24,11 @@ const Curso = () => (
               <img src="https://www.diariogol.com/uploads/s1/65/43/57/2/cristiano-ronaldo.jpeg" alt="profesor" />
             </div>
           </div>
-          <span className="small">{curso.teacher}</span>
+          <span className="small">{teacher}</span>
         </div>
       </div>
       <div className="s-main-center">
-<a className="button--ghost-alert button--tiny" href="http://www.youtube.com">$ {curso.price}USD</a>
+<a className="button--ghost-alert button--tiny" href="http://www.youtube.com">$ {price}USD</a>
       </div>
     </div>
   </article>
