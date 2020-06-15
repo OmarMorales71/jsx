@@ -1,8 +1,10 @@
 import React from 'react';
 import "./styles/styles.scss"
-import Curso from './Curso'
+//import Curso from './Curso'
 import TopBar from './TopBar'
-
+import Banner from "./Banner"
+import Formulario from './Formulario'
+/*
 const cursos =[
   {title: "Java desde cero",
     img:"https://i.ytimg.com/an_webp/k4oeMldaqHk/mqdefault_6s_480x270.webp?du=3000&sqp=CIXrhPcF&rs=AOn4CLAyXihrPY8XMWZkTMeEsvJ8PzzBCw",
@@ -21,30 +23,16 @@ const cursos =[
     teacher: "Deborah Nonnis",
     price: "9"},
     {}
-]
+]*/
 
 
 //Solo se puede retornar un elemento
 const App = () => (
     <>
     <TopBar />
-        <div className="main-banner img-container l-section" id="main-banner">
-  <div className="ed-grid lg-grid-6">
-    <div className="lg-cols-4 lg-x-2">
-      <img className="main-banner__img" alt="banner" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRwXroMcDOyIpTkbWQaitmxd5ryNdA1i3QL8ENTlSprsa_RCb1h&usqp=CAU"/>
-      <div className="main-banner__data s-center">
-        <p className="t2 s-mb-0">Título del banner</p>
-        <p> Subtítulo del banner</p>
-        <a href="http://www.youtube.com" className="button">Botón del banner</a>
-      </div>
-    </div>
-  </div>
-</div>
+    <Banner />
+    <Formulario nombre="Omar Morales" correo="omar@gmail.com"/>
 
-<div className="ed-grid m-grid-4">
-
-{cursos.map(curso=><Curso title={curso.title} img={curso.img} price={curso.price} teacher={curso.teacher}/>)}
-</div>
     </>
 )
 
