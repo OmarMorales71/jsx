@@ -31,7 +31,7 @@ const App = () => (
     <>
     <TopBar />
     <Banner />
-    <Formulario nombre="Omar Morales" correo="omar@gmail.com"/>
+    <Formulario title="Chidisisimo"/>
 
     </>
 )
