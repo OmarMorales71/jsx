@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 /*const curso = {
   title: "React desde cero",
   img: "https://www.futbolred.com/files/article_main/files/crop/uploads/2018/05/26/5b09d2c02885b.r_1590520116395.0-4-680-344.jpeg",
@@ -9,11 +10,12 @@ import PropTypes from 'prop-types'
 }*/
 
 
-const Curso = ({title, img, price, teacher}) => (
+const Curso = ({id, title, img, price, teacher}) => (
   <article className="card">
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-
+      <Link to={`/cursos/${id}`}>
       <img src={img} alt={title} />
+      </Link>
     </div>
     <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
       <h3 className="t5 s-mb-2 s-center">

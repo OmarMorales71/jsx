@@ -4,6 +4,10 @@ import "./styles/styles.scss"
 import TopBar from './TopBar'
 import Banner from "./Banner"
 import Formulario from './Formulario'
+import CourseGrid from './CourseGrid'
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
+import Course from './Course'
+import Historial from './Historial'
 /*
 const cursos =[
   {title: "Java desde cero",
@@ -28,12 +32,22 @@ const cursos =[
 
 //Solo se puede retornar un elemento
 const App = () => (
-    <>
-    <TopBar />
-    <Banner />
-    <Formulario title="Chidisisimo"/>
+  
+    <Router>
+      <TopBar />
+      <Switch>
+        <Route path="/" exact component={Banner}/>
+        <Route path="/cursos/:id" component={Course}/>
+        <Route path="/cursos" component={CourseGrid}/>
+        <Route path="/formulario" component={()=><Formulario title="contacto" />}/>
+        <Route path="/historial/:past" component={Historial}/>
 
-    </>
+        <Route component={()=>
+        <div className="ed-grid">
+          <h1>404 not found</h1>
+        </div>}/>
+      </Switch>
+    </Router>
 )
 
 export default App;
