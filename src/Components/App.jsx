@@ -1,13 +1,14 @@
 import React from 'react';
-import "./styles/styles.scss"
+import "../styles/styles.scss"
 //import Curso from './Curso'
-import TopBar from './TopBar'
-import Banner from "./Banner"
-import Formulario from './Formulario'
-import CourseGrid from './CourseGrid'
+import TopBar from './Organisms/TopBar'
+import Home from "./Pages/Home"
+import Form from './Pages/Form'
+import CourseGrid from './Organisms/CourseGrid'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
-import Course from './Course'
-import Historial from './Historial'
+import Course from './Pages/Course'
+import History from './Pages/History'
+import Users from './Pages/Users';
 /*
 const cursos =[
   {title: "Java desde cero",
@@ -33,14 +34,15 @@ const cursos =[
 //Solo se puede retornar un elemento
 const App = () => (
   
-    <Router>
+    <Router> 
       <TopBar />
       <Switch>
-        <Route path="/" exact component={Banner}/>
+        <Route path="/" exact component={Home}/>
         <Route path="/cursos/:id" component={Course}/>
         <Route path="/cursos" component={CourseGrid}/>
-        <Route path="/formulario" component={()=><Formulario title="contacto" />}/>
-        <Route path="/historial/:past" component={Historial}/>
+        <Route path="/formulario" component={()=><Form title="contacto" />}/>
+        <Route path="/historial/:past" component={History}/>
+        <Route path="/usuarios" component={Users}/>
 
         <Route component={()=>
         <div className="ed-grid">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Formulario extends Component { //Extiende de React.Component
+class Form extends Component { //Extiende de React.Component
 
     //Enviar las props a la clase Component
     //Constructor solo se construye si tenemos props
@@ -9,9 +9,9 @@ class Formulario extends Component { //Extiende de React.Component
         
         //El estado del componente
         this.state = {
-            nombre: "",
-            correo: "",
-            fecha: new Date()
+            name: "",
+            email: "",
+            date: new Date()
         }
 
         //Become my method to a this.method (Be part of the class)
@@ -25,19 +25,19 @@ class Formulario extends Component { //Extiende de React.Component
     //changeName --Changing the state-- 
     changeName(e){
         this.setState({
-            nombre: e.target.value 
+            name: e.target.value 
         })
     }
 
     changeEmail(e){
         this.setState({
-            correo: e.target.value
+            email: e.target.value
         })
     }
     
     changeDate(){
         this.setState({
-            fecha: new Date()
+            date: new Date()
         })
     }
 
@@ -46,8 +46,8 @@ class Formulario extends Component { //Extiende de React.Component
         return (
             <div className='ed-grid'>
                 <h1>Formulario {this.props.title}</h1>
-                <h4>{this.state.fecha.getHours() + ":"+this.state.fecha.getMinutes()+":"+this.state.fecha.getSeconds()}</h4>
-                <form className="ed-container form__item" id="elemento" >
+                <h4>{this.state.date.getHours() + ":"+this.state.date.getMinutes()+":"+this.state.date.getSeconds()}</h4>
+                <form className="ed-container form__item" id="element" >
                     <div className="ed-grid m-grid-2">
                         <div className="ed-item form__item">
                             <label >Nombre completo</label>
@@ -72,17 +72,17 @@ class Formulario extends Component { //Extiende de React.Component
 
                 <div>
                     <h2>
-                        {`Hola ${this.state.nombre}`}
+                        {`Hola ${this.state.name}`}
                     </h2>
-                    <span>{`Tu correo es: ${this.state.correo}`}</span>
+                    <span>{`Tu correo es: ${this.state.email}`}</span>
                 </div>
             </div>
         )
     }
 
     componentDidMount(){
-        const elemento = document.getElementById("elemento")
-        console.log(elemento)
+        const element = document.getElementById("element")
+        console.log(element)
 
         this.dateInterval=setInterval(() => {
             this.changeDate()
@@ -101,4 +101,4 @@ class Formulario extends Component { //Extiende de React.Component
 }
 
 
-export default Formulario;
+export default Form;

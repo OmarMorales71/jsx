@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Historial=({match, location, history})=>(
+const History=({match, location, history})=>(
     <div>
         <h1>Historial</h1>
         {console.log(match)}
@@ -13,4 +13,4 @@ const Historial=({match, location, history})=>(
 
 )
 
-export default Historial
+export default History

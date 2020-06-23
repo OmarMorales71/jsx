@@ -10,7 +10,7 @@ import {Link} from 'react-router-dom'
 }*/
 
 
-const Curso = ({id, title, img, price, teacher}) => (
+const CourseCard = ({id, title, img, price, teacher}) => (
   <article className="card">
     <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
       <Link to={`/cursos/${id}`}>
@@ -40,7 +40,7 @@ const Curso = ({id, title, img, price, teacher}) => (
 
 //Tipos de dato de mis propiedades
 //Se necesita la lib prop-types
-Curso.propTypes={
+CourseCard.propTypes={
   title: PropTypes.string,
   img: PropTypes.string,
   price: PropTypes.string,
@@ -49,10 +49,10 @@ Curso.propTypes={
 
 //Valores por defecto de mis propiedades
 //Sin libreria se puede usar un operador ternario {img?img:default}
-Curso.defaultProps={
+CourseCard.defaultProps={
   title: "Sin titulo",
   img:"https://cloud10.todocoleccion.online/postales/tc/2010/05/09/19173452.jpg",
   price:"3312",
   teacher:"Sin maestro"
 }
-export default Curso;
+export default CourseCard;

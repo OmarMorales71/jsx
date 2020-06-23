@@ -9,6 +9,7 @@ const TopBar = () => (
         <div className="s-to-center m-to-right">
           <NavLink className="button--cta button--tiny " activeClassName="activo" to="/cursos">Cursos</NavLink>
           <NavLink className="button--cta button--tiny" activeClassName="activo" to="/formulario">Formulario</NavLink>
+          <NavLink className="button--cta button--tiny" activeClassName="activo" to="/usuarios">Usuarios</NavLink>
         </div>
       </div>
     </div>
