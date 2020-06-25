@@ -4,7 +4,7 @@ import "../styles/styles.scss"
 import TopBar from './Organisms/TopBar'
 import Home from "./Pages/Home"
 import Form from './Pages/Form'
-import CourseGrid from './Organisms/CourseGrid'
+import Courses from './Pages/Courses'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Course from './Pages/Course'
 import History from './Pages/History'
@@ -39,7 +39,7 @@ const App = () => (
       <Switch>
         <Route path="/" exact component={Home}/>
         <Route path="/cursos/:id" component={Course}/>
-        <Route path="/cursos" component={CourseGrid}/>
+        <Route path="/cursos" component={Courses}/>
         <Route path="/formulario" component={()=><Form title="contacto" />}/>
         <Route path="/historial/:past" component={History}/>
         <Route path="/usuarios" component={Users}/>
