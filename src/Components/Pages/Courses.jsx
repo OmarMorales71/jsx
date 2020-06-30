@@ -1,5 +1,4 @@
 import React from 'react'
-import CourseCard from '../Molecules/CourseCard'
 import axios from 'axios'
 import CourseGrid from '../Organisms/CourseGrid'
 

@@ -1,49 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
+import useCourse from '../CustomHooks/useCourse'
 
-
-const courses = [{
-    id: 1,
-    title: "React desde cero",
-    img: "https://i.ytimg.com/an_webp/-FlxM_0S2lA/mqdefault_6s_480x270.webp?du=3000&sqp=CMC7r_cF&rs=AOn4CLDiJ9L4WuPP0XbWAtkiFWV2dJmgPA",
-    teacher: "George Eglinton",
-    price: 59
-},
-{
-    id: 2,
-    title: "JavaScript desde cero",
-    img: "https://i.ytimg.com/an_webp/-FlxM_0S2lA/mqdefault_6s_480x270.webp?du=3000&sqp=CMC7r_cF&rs=AOn4CLDiJ9L4WuPP0XbWAtkiFWV2dJmgPA",
-    teacher: "Mars Donald",
-    price: 29
-},
-{
-    id: 3,
-    title: "SQL desde cero",
-    img: "https://i.ytimg.com/an_webp/-FlxM_0S2lA/mqdefault_6s_480x270.webp?du=3000&sqp=CMC7r_cF&rs=AOn4CLDiJ9L4WuPP0XbWAtkiFWV2dJmgPA",
-    teacher: "Aaron Wesley",
-    price: 49
-},
-{
-    id: 4,
-    title: "Java desde cero",
-    img: "https://i.ytimg.com/an_webp/-FlxM_0S2lA/mqdefault_6s_480x270.webp?du=3000&sqp=CMC7r_cF&rs=AOn4CLDiJ9L4WuPP0XbWAtkiFWV2dJmgPA",
-    teacher: "Valeria Vargas",
-    price: 999
-}
-
-]
 
 const Course = ({ match }) => {
 
-    const currentCourse = courses.filter(c => c.id === parseInt(match.params.id))[0]
-    return (
+    //utilizar el estado con Hooks. useState retorna un array de 2 elementos con el estado actual y un metodo para modificar el estado
+    //Se utiliza destructuracion para almacenar el array en diferentes variables
+    const [comment, setComment] = useState("Sin Comentario")
+    const course = useCourse(match.params.id)
+    const setMyComment=e=>{
+        setComment(e.target.value)
+    }
+    /*const changeTitle=(newTitle)=>{
+        setState({
+            currentCourse:{
+                ...state.currentCourse,//hace que el estado anterior se guarde y que solo modifique lo que hemos escrito
+                "title": newTitle
+            }
+        })
+    }*/
+    
 
-        currentCourse
-            ? (<div className="ed-grid m-grid-3">
-                <h1 className="m-cols-3">Curso {currentCourse.title}</h1>
-                <img className="m-cols-1" src={currentCourse.img} alt="imagen" />
-                <p className="m-cols-2">Profesor: {currentCourse.teacher} Precio: {currentCourse.price}</p>
+    return (
+        course
+            ? (
+            <div className="ed-grid">
+            <div className=" m-grid-3 ed-grid">
+                <h1 className="m-cols-3">Curso {course.title}</h1>
+                <img className="m-cols-1" src={course.img} alt="imagen" />
+                <p className="m-cols-2">Profesor: {course.teacher} Precio: {course.price}</p>
+                {/* <button onClick={changeTitle.bind(this, "Pascal desde cero")}>Cambiar titulo</button> */}
+            </div>
+            <div className="ed-grid"> 
+                <h2>Escribe tu comentario</h2>
+                <input type="text" placeholder="Escribe..." onChange={setMyComment.bind(this)}/>
+            <p>{comment}</p>
+            </div>
             </div>)
-            :<div className="ed-grid ">
+            : <div className="ed-grid ">
                 <h1>Curso no encontrado</h1>
             </div>
     )
